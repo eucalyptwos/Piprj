@@ -1,20 +1,19 @@
 public class Pi{
 	public static void main(String[] args) {
-		int k=1;
-		double pie=1.0, pie_ori;
-		double sign=1.0, tolerr = 0.00000000025;
-		double err=1.0;
+		double pie=0, pie_ori=0;
+		double tolerr=0.00000000000025;
+		double err;
+		double i=1.0;
 		while(true){
 			pie_ori=pie;
-			pie*=1/(1-1/(4*Math.pow(k,2)));
-			k+=1;
+			pie+=1 / Math.pow(i,2);
 			err=pie_ori-pie;
+			i+=1;
 			if(err<0)
-				err= -err;
+				err=-err;
 			if(err<=tolerr)
 				break;
 			}
-		pie=pie*2;
-		System.out.println("pie= "+pie);
+		System.out.println("pie= "+Math.sqrt(pie*6));
 	}
 }
